@@ -1,0 +1,10 @@
+#!/bin/sh
+
+python3.5 tests.py >/dev/null 2>&1
+
+result = $?
+
+if [result != 0]; then
+	echo 'tests.py failed! Commit did not executed.'
+	exit $result
+fi
